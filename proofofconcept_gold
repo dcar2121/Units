@@ -1,0 +1,56 @@
+<script type="text/javascript">
+		var GSGlobalParams = window["GSGlobalParams"] || {};
+        jQuery(document).ready(function(){
+			if((typeof GraniteClientLibraryManager !== "undefined") && (GraniteClientLibraryManager.scripts)) {
+				GSGlobalParams.deferredLibs = _.filter(GraniteClientLibraryManager.scripts, function(item){
+					return (item.c.indexOf('gs.deferred') > -1);
+				});
+				if(GSGlobalParams.deferredLibs.length) {
+					var libsLoaded = 0;
+					GSGlobalParams.deferredLibs.map(function(res){
+						if(res.p.endsWith(".css")){
+							var css;
+							css = document.createElement('link');
+							css.rel = "stylesheet";
+							css.type = "text/css";
+							css.media = "all";
+							css.href = res.p;
+							document.getElementsByTagName("head")[0].appendChild(css);
+							if(++libsLoaded === GSGlobalParams.deferredLibs.length){
+								initGSUI();
+							}
+						} else {
+							$.ajax({
+								url: res.p,
+								cache: true,
+								dataType: 'script',
+								error: function(error){
+									if(++libsLoaded === GSGlobalParams.deferredLibs.length){
+										initGSUI();
+									}
+									console.error(error.status, error.statusText, res.p);
+								},
+								success: function(){
+									if(++libsLoaded === GSGlobalParams.deferredLibs.length){
+										initGSUI();
+									}
+								}
+							});
+						}
+						return true;
+					})
+				} else {
+					initGSUI();
+				}
+			} else {
+				initGSUI();
+			}
+        });
+		function initGSUI(){
+			var objModel = new SGM.GSAMTPD.App.Model();
+            var objView = new SGM.GSAMTPD.App.View(objModel);
+            var objController = new SGM.GSAMTPD.App.Controller(objModel, objView);
+            objController.init();
+		}
+        GSGlobalParams.clcPageLink = "/content/gsam/us/en/advisors/literature-and-forms/literature";
+    </script>
