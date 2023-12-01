@@ -1,0 +1,83 @@
+[UniT]
+
+[* This UniT generates one complete html page of the final website and uses nested UniTs *]
+
+[* first, initialize some parameters for the first nested UniT, the header: *]
+[title="Generate or convert text, programs, documents, or reports of any format or language."]
+[englishKeywords="dynamic,static,web-page,text,file,report,documentation,programs"]
+
+[* execute nested UniT: *]
+[unit.UniT.interprete(exampleDir+"header.unit", identifiers, out)]
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top">
+	[* execute nested UniT: *]
+	[unit.UniT.interprete(exampleDir+"navigation.unit", identifiers, out)]
+</td>
+<td>
+	<table border="0" cellpadding="4" cellspacing="4">
+	<tr>
+	<td bgcolor="#[=background]">
+
+		<img src="[=unitGearPicture]" border="0" alt="Generate or convert text, programs, documents, or reports of any format or language">
+
+		<h1> Generate or convert text, programs, documents, web pages or reports of any format or language </h1>
+
+		Have you ever written a program whose main purpose was to generate text? 
+		And do you still like to write things such as:
+		<pre>System.out.println("some mini-piece of text");</pre>
+		thousands of times? Have you ever thought: "There must be an easier way"?  
+		Well, if you have thought that, read on ...
+
+		<h2> Welcome to the wonderful world of UniT! </h2>
+
+		<p> UniT is a new category of base technology, a mixture
+			of a text template and a very simple Java-like programming language
+			which generates <strong>any</strong> text-based format. 
+			UniT has full access to Java and can be used to do various things
+			that have something to do with text generation. </p>
+
+		<p> UniT is similar to JSP, but it is more platform independant, 
+			more general, more flexible, easier, smaller, and cleaner. </p>
+
+		<h2> What can you do with UniT? </h2>
+
+		<p> For example, the following applications are possible: </p>
+
+		<ul>
+		<li> Access any data source, e.g., databases, files, networks, parsed input, or 
+			any systems or products that have an appropriate Java API, 
+			such as content management systems, web shops, or application servers.
+		<li> Generate dynamic XML, HTML that contain information from any data source.
+			Such dynamic web pages like those of search engines or online-shops 
+			can be embedded as CGI or servlet. </li>
+		<li> Generate static web pages or any other text-based document format such as
+			HTML, XML, SGML, PDF, RTF, Word, .ps, LaTex, or
+			any company proprietary format ... anything! </li>
+		<li> Generate any report or
+		<li> export text-based data from any product or data source. </li>
+		<li> Convert text-based data into another format, for example,
+			parse XML or any other document format with an appropriate tool 
+			into memory, access it with DOM, and generate other text formats
+			from it with UniT. </li>
+		<li> Generate code/computer programs, e.g., C, C++, Java, SQL, or
+			even ASP, JSP, or UniT-programs, 
+			e.g., within your integrated development environment wizard </li>
+		<li> Generate documentation, e.g., for computer
+			programs, similar to Javadoc, but with any
+			format and layout you want. </li>
+		<li> Generate test data, e.g., for automatic tests. </li>
+		<li> Replicate or synchronize data between programs or data pools. </li>
+		</ul>
+		<p> Further applications depend only on your imagination,
+			your goals, and your products. </p>
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
+
+[* execute nested UniT: *]
+[unit.UniT.interprete(exampleDir+"footer.unit", identifiers, out)]

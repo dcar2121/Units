@@ -1,0 +1,40 @@
+[UniT]
+
+[* This UniT generates one complete html page of the final website and uses nested UniTs *]
+
+[* first, initialize some parameters for the first nested UniT, the header: *]
+[title="Things that might come in the near future "]
+[englishKeywords="to,do,future"]
+[* execute nested UniT: *]
+[unit.UniT.interprete(exampleDir+"header.unit", identifiers, out)]
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top">
+	[* execute nested UniT: *]
+	[unit.UniT.interprete(exampleDir+"navigation.unit", identifiers, out)]
+</td>
+<td>
+	<table border="0" cellpadding="4" cellspacing="4">
+	<tr>
+        <td bgcolor="#[=background]">
+
+		<h1> Things that might come in the near future </h1>
+
+		<ul>
+		<li> General XML-DTD for program documentation. Do you know the best way, 
+			how to declare an XML-element that may contain any valid XML? </li>
+		<li> PERCEPS-templates to extract documentation comments from C++ into XML. </li>
+		<li> Examples to generate documentation for C++ and Java. </li>
+		<li> More examples, e.g. RTF. Do you have any? </li>
+		</ul>
+
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
+
+[* execute nested UniT: *]
+[unit.UniT.interprete(exampleDir+"footer.unit", identifiers, out)]

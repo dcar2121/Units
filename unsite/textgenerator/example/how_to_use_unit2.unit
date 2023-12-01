@@ -1,0 +1,895 @@
+[UniT]
+
+[* 
+	This UniT is very long and therefore is separated from the surrounding UniT,
+	to make it more readable. 
+	Did not indent anything, because pre-tags should be indented.
+*]
+
+
+<h1> How to use UniT </h1>
+
+<p> Now we dive into the technical details, but since UniT
+is so easy, after reading this text you should
+know nearly everything about using UniT if you are already
+familiar with similar technologies. </p>
+
+<p> The remaining part introduces the main features of UniT 
+by giving a short description, a code example, and example output. Some of
+these examples do not make much sense, they just demonstrate 
+the features. (Of course, all features, e.g., loops, 
+can be nested like in Java.) </p>
+
+<table border=1 cellpadding="4">
+
+[*<colgroup>
+<col width="25%">
+<col width="75%">
+</colgroup>
+*]
+
+<tr valign="top">
+
+<th colspan=2>
+Special UniT tags
+</th>
+
+</tr>
+
+<tr valign="top">
+
+<th>
+name and description of the UniT feature
+</th>
+
+<th>
+example syntax and example output <br> of the UniT feature
+</th>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong> start tag </strong><br>
+Each UniT text template or program can be recognized by the start tag
+in the first line and column. By the way, UniT source code is case 
+sensitive, of course! Every UniT source code 
+starts with the UniT start tag:
+</td>
+
+<td>
+<pre>[[UniT]]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>unit bracket escapes</strong><br>
+A UniT is a text template, i.e., a mixture of text and UniT tags.
+Tags allow the insertion of dynamic data.
+Brackets ("[[" and "]]") are used to limit all the UniT tags.
+Nevertheless, it should be possible to generate/output the usual brackets,
+like those above. Therefore, bracket escapes are defined.
+Double opening bracket ("[[[[") to output a single opening bracket: [[;
+double closing bracket ("]]]]") to output a single closing bracket: ]].
+They can be combined in any order and number: 
+</td>
+
+<td>
+<pre>]]]][[[[]]]][[[[]]]]
+]][[]][[]]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>output expressions</strong><br>
+As in other technologies, it is very easy to convert any expression 
+to a String object and direct it to output:
+</td>
+
+<td>
+<pre>[[= 1+1]]
+[= 1+1]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>nestable comments</strong><br>
+Of course, it is possible to include comments
+that should not be part of the output.
+Those comments are enclosed in brackets, too,
+but with a (following/leading) star within them.
+They can span a single or multiple lines and they can be nested:
+</td>
+
+<td>
+<pre>short comment:
+start-[[*short comment*]]-end 
+short comment:
+start-[*short comment*]-end 
+
+multiple line comment:
+start-[[*
+	comment over
+	multiple lines
+*]]-end 
+multiple line comment:
+start-[*
+	comment over
+	multiple lines
+*]-end 
+
+nested comment:
+start-[[*
+	This is a [[* nested *]] comment 
+	with some source code:
+	[[= "hi, this will not be executed"]]
+*]]-end 
+nested comment:
+start-[*
+	This is a [* nested *] comment 
+	with some further source code:
+	[= "hi, this will not be executed"]
+*]-end</pre>
+</td>
+
+</tr>
+
+<!-------------------------------------------------------------------------->
+<tr valign="top">
+
+<th colspan=2>
+Expressions of the UniT programming language (only the easy parts of Java)
+</th>
+
+</tr>
+
+<tr valign="top">
+
+<th>
+name and description of the UniT feature
+</th>
+
+<th>
+example-syntax and example-result <br> of the UniT feature
+</th>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>variable declarations</strong><br>
+As in Java methods, you are allowed to declare any valid Java identifiers 
+as references to objects. Because UniT is realized with dynamic 
+type checking, type declarations and type casting are not needed. 
+The type is always Object.
+</td>
+
+<td>
+<pre>[[Object reference]]
+[[= reference]]
+[Object reference]
+[= reference]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>single declaration with immediate initialization</strong><br>
+A reference can be initialized immediately at declaration with any expression.
+</td>
+
+<td>
+<pre>[[Object int1 = 1]]
+[[= int1]]
+[Object int1 = 1]
+[= int1]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>multiple declarations</strong><br>
+Several references can be declared at once, separated by comma.
+</td>
+
+<td>
+<pre>[[Object oneDimIntArray, 
+	twoDimIntArray, 
+	initialized, 
+	counter]]
+[[=oneDimIntArray]]
+[[=twoDimIntArray]]
+[[=initialized]]
+[[=counter]]
+[[Object int2 = 1+1, 
+	int3 = int2 +1, 
+	test = new unit.Test(out)]]
+[[=int2]]
+[[=int3]]
+[[=test]]
+[Object oneDimIntArray, 
+	twoDimIntArray, 
+	initialized, 
+	counter]
+[=oneDimIntArray]
+[=twoDimIntArray]
+[=initialized]
+[=counter]
+[Object int2 = 1+1, 
+	int3 = int2 +1, 
+	test = new unit.Test(out)]
+[=int2]
+[=int3]
+[=test]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>strings</strong><br>
+Strings are supported, of course.
+</td>
+
+<td>
+<pre>[[= "hello world"]]
+[= "hello world"]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>multiple line strings</strong><br>
+Even this is possible:
+</td>
+
+<td>
+<pre>[[= "hello 
+world"]]
+[= "hello 
+world"]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>string concatenation</strong><br>
+</td>
+
+<td>
+<pre>[[= "hello" + " " + "world"]]
+[[= 2 + " times"]]
+[= "hello" + " " + "world"]
+[= 2 + " times"]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>decimals/int, multiplication, division, modulo, addition, 
+subtraction, unay minus, parenthesis: </strong><br>
+Calculation is supported, as is usual in Java.
+</td>
+
+<td>
+<pre>[[= 123]]
+[[= 2*3]]
+[[= 6/2]]
+[[= 5%3]]
+[[= 2+3]]
+[[= 5-2]]
+[[= -1]]
+[[= (2 + 3) * 4]]
+[= 123]
+[= 2*3]
+[= 6/2]
+[= 5%3]
+[= 2+3]
+[= 5-2]
+[= -1]
+[= (2 + 3) * 4]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>preferences</strong><br>
+All operators have the usual preferences:
+</td>
+
+<td>
+<pre>[[= 2 + 3 * 4]] = [[= 2 + ( 3 * 4 )]] 
+[= 2 + 3 * 4] = [= 2 + (3 * 4)]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>boolean literals, logic and, logic or, (unary) not: </strong><br>
+Conditions are possible.
+</td>
+
+<td>
+<pre>[[= true]]
+[[= false]]
+[[= true && false]]
+[[= false || true]]
+[[= !false]]
+[= true]
+[= false]
+[= true && false]
+[= false || true]
+[= !false]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>lower operator, lower equal, greater equal, greater,
+equality of two operands, no equality: </strong><br>
+Comparison:
+</td>
+
+<td>
+<pre>[[= 2 &lt; 2]]
+[[= 2 &lt;= 2]]
+[[= 2 &gt;= 2]]
+[[= 2 &gt; 2]]
+[[= 2 == 2]]
+[[= 2 != 2]]
+[= 2 < 2]
+[= 2 <= 2]
+[= 2 >= 2]
+[= 2 > 2]
+[= 2 == 2]
+[= 2 != 2]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>any kind of references</strong><br>
+Any locally declared identifier within the current scope,
+any named argument as described below, and 
+even the null literal can be used in expressions:
+</td>
+
+<td>
+<pre>[[= int3]]
+[[= int3 = 2]]
+[[= int3]]
+[[= null]]
+[= int3]
+[= int3 = 2]
+[= int3]
+[= null]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>field access</strong><br>
+Read and write any public static or non-static field of any class.
+</td>
+
+<td>
+<pre>[[= test.intField]]
+[[= test.intField = 1]]
+[[= test.intField]]
+[[= unit.Test.staticIntField]]
+[[= unit.Test.staticIntField = 2]]
+[[= unit.Test.staticIntField]]
+[= test.intField]
+[= test.intField = 1]
+[= test.intField]
+[= unit.Test.staticIntField]
+[= unit.Test.staticIntField = 2]
+[= unit.Test.staticIntField]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>object constructor with arguments and array constructor</strong><br>
+</td>
+
+<td>
+<pre>[[= new Integer(1)]]
+[[= oneDimIntArray = new int[[2]]]]
+[[= twoDimIntArray = new int[[2]][[]]]]
+[= new Integer(1)]
+[= oneDimIntArray = new int[2]]
+[= twoDimIntArray = new int[2][]]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>array read and write access</strong><br>
+</td>
+
+<td>
+<pre>[[= oneDimIntArray[[0]]]]
+[[= oneDimIntArray[[0]] = 1]]
+[[= oneDimIntArray[[0]]]]
+[= oneDimIntArray[0]]
+[= oneDimIntArray[0] = 1]
+[= oneDimIntArray[0]]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>call any public static or non-static method with any arguments,</strong><br>
+Pass argument(s) that do not exactly match 
+with the method signature/parameter declaration(s)
+(a dynamic method resolution will be applied). <br>
+All values/objects of the classes 
+<ul>
+	<li>
+		java.lang.Boolean, 
+	</li>
+	<li>
+		java.lang.Character, 
+	</li>
+	<li>
+		java.lang.Byte, 
+	</li>
+	<li>
+		java.lang.Short, 
+	</li>
+	<li>
+		java.lang.Integer, 
+	</li>
+	<li>
+		java.lang.Long, 
+	</li>
+	<li>
+		java.lang.Float, 
+	</li>
+	<li>
+		java.lang.Double
+	</li>
+</ul>
+can be created and usually will be treated as/converted to 
+values of primitive types, automatically:
+</td>
+
+<td>
+<pre>[[System.out.println("hello world")]]
+[[System.out.println(System.out)]]
+[[unit.Test.staticMethod(1, out)]]
+[[unit.Test.staticMethod(new Float("1.5"), out)]]
+[[unit.Test.staticMethod("a".charAt(0), out)]]
+[System.out.println("hello world")]hello world[* faked output, that can not be redirected from System.out object: *]
+[System.out.println(System.out)]java.io.PrintStream@391b4be2[* faked output, that can not be redirected from System.out object: *]
+[unit.Test.staticMethod(1, out)]
+[unit.Test.staticMethod(new Float("1.5"), out)]
+[unit.Test.staticMethod("a".charAt(0), out)]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>operator instanceof</strong><br>
+Runtime type information about objects and arrays:
+</td>
+
+<td>
+<pre>[[= "hello" instanceof String]]
+[[= oneDimIntArray instanceof int[[]]]]
+[= "hello" instanceof String]
+[= oneDimIntArray instanceof int[]]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>type checking</strong><br>
+Of course, UniT always checks the type of Boolean conditions and
+expression operands and UniT throws appropriate RuntimeExceptions.
+</td>
+
+<td>
+[*<pre> </pre>*]
+</td>
+
+</tr>
+
+<!-------------------------------------------------------------------------->
+<tr valign="top">
+
+<th colspan=2>
+Control flow (only the easy parts of Java)
+</th>
+
+</tr>
+
+<tr valign="top">
+
+<th>
+name and description of the UniT feature
+</th>
+
+<th>
+example syntax and example result <br> of the UniT feature
+</th>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>while loop with continue and break</strong><br>
+The most important feature for a dynamic text generator language
+like UniT is a loop. 
+UniT allows all the kinds of loops that are allowed in Java, too.
+</td>
+
+<td>
+<pre>[[counter = 1]]
+[[while (counter &lt; 5){]]
+	[[= counter]]. iteration
+	[[counter = counter +1]]
+	[[if (counter == 3) {]]
+		continuing iteration
+		[[continue]]
+	[[} else {]]
+		[[if (counter == 4) {]]
+			breaking iteration
+			[[break]]
+			blabla
+		[[}]]
+	[[}]]
+[[}]]
+[counter = 1]
+[while (counter < 5){]
+	[= counter]. iteration
+	[counter = counter +1]
+	[if (counter == 3) {]
+		continuing iteration
+		[continue]
+	[} else {]
+		[if (counter == 4) {]
+			breaking iteration
+			[break]
+			blabla
+		[}]
+	[}]
+[}]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>do loop</strong><br>
+</td>
+
+<td>
+<pre>[[do {]]
+	within do
+	[[break]]
+	blabla
+[[} while(false)]]
+[do {]
+	within do
+	[break]
+	blabla
+[} while(false)]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>for loop with declaration initialization</strong><br>
+A for loop with declaration list in initialization that does NOT iterate.
+</td>
+
+<td>
+<pre>[[for (	Object a = 1, b = 2, c = 3; 
+	false; 
+	a = 1, b = 2) {]]
+	within for
+	[[break]]
+	blabla
+[[}]]
+[for (Object a = 1, b = 2, c = 3; false; a = 1, b = 2) {]
+	within for
+	[break]
+	blabla
+[}]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>for loop with break</strong><br>
+A for loop without condition usually never ends. But we use a break statement: 
+</td>
+
+<td>
+<pre>[[for (;;) {]]
+	within for
+	[[break]]
+[[}]]
+[for (;;) {]
+	within for
+	[break]
+[}]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>conditionals</strong><br>
+Often special conditions must be checked and handled differently.
+</td>
+
+<td>
+<pre>[[if (true) {]]
+	within then
+[[}]]
+
+[[if (false) {]]
+	within then
+[[} else {]]
+	within else
+[[}]]
+[if (true) {]
+	within then
+[}]
+[if (false) {]
+	within then
+[} else {]
+	within else
+[}]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>error handling</strong><br>
+It is possible to generate and handle exceptions in UniT like in Java.
+Of course, the finally block can be omitted. Or any catch block.
+</td>
+
+<td>
+<pre>[[try {]]
+	within try with throw 1
+	[[Object withinEHandling]]
+	[[withinEHandling = null]]
+	</pre>[[throw new RuntimeException("This is a stupidly provocated RuntimeException.")]]<pre>
+[[} catch (RuntimeException exception) {]]
+	caught RuntimeException: [[=exception]]
+	[[Object withinEHandling]]
+	[[withinEHandling = null]]
+	<br>
+[[} finally {]]
+	within finally, e.g., for closing files
+	[[Object withinEHandling]]
+	[[withinEHandling = null]]
+[[}]]
+[[Object withinEHandling]]
+[[withinEHandling = null]]
+[try {]
+	within try with throw 1
+	[Object withinEHandling]
+	[withinEHandling = null]
+	[throw new RuntimeException("This is a stupidly provocated RuntimeException.")]
+[} catch (RuntimeException exception) {]
+	caught RuntimeException: </pre>[=exception]<pre>
+	[Object withinEHandling]
+	[withinEHandling = null]
+	<br>
+[} finally {]
+	within finally, e.g., for closing files
+	[Object withinEHandling]
+	[withinEHandling = null]
+[}]
+[Object withinEHandling]
+[withinEHandling = null]</pre>
+</td>
+
+</tr>
+
+<tr valign="top">
+
+<td>
+<strong>exit unit</strong><br>
+A UniT program can be left at any location
+(further text won't be generated anymore!):
+</td>
+
+<td>
+<pre>[[return]]</pre>
+</td>
+
+</tr>
+
+<!-------------------------------------------------------------------------->
+</table>
+
+<h2>
+	Special features of UniT
+</h2>
+
+<h2>
+	The predefined identifier/reference "out":
+</h2>
+
+<p>
+	All generated output is directed to an object called/referenced 
+	by the identifier "out", which is always predefined 
+	(with the System.out object wrapped in a Writer instance) and 
+	can be reassigned at any time. It can even be passed to a unit 
+	as a named argument (see below). 
+	It must be an instance of the class java.io.Writer.
+	And because the identifier out always references a Writer object,
+	any file and anything else can be output to it.
+</p>
+
+<p>
+	First we save the current out object:
+<pre>
+[[Object savedOut = out]]
+[Object savedOut = out]</pre>
+</p>
+
+<p>
+	The out object can be used <strong>to redirect output to a file or 
+	to multiple targets or to install special filters</strong>, 
+	like the following example illustrates.
+	We create and set a special output Writer
+	that replaces all white space sequences by one space and
+	that has special methods for reinserting white space explicitly.
+	This is a way having a nicely formatted UniT source code
+	and getting pretty output at the same time,
+	because you can indent and format the UniT source code and the output 
+	as you like, completely independently/orthogonally.
+</p>
+
+<p>
+	After using such a WhiteSpaceStripper, 
+	your indentation in the UniT source code, e.g., in loops, 
+	has no effect on the output because all white space is stripped and 
+	one space is inserted instead. But if the output needs to look nice, too, 
+	or special white space is needed, it can be created explicitly 
+	with some special methods. 
+</p>
+
+<pre>
+[[out = new unit.WhiteSpaceStripper(out)]]
+[out = new unit.WhiteSpaceStripper(out)]
+1. line 
+2. line 
+3. line 
+[out.newline()]
+[out.newline()]Now a method calls to create white space explicitly:
+[out.newline()]3 spaces([[out.space()]]):[out.space()][out.space()][out.space()]end of spaces
+[out.newline()]3 tabulators([[out.tab()]]):[out.tab()][out.tab()][out.tab()]end of tabs
+[out.newline()]3 newlines([[out.newline()]]):[out.newline()][out.newline()][out.newline()]end of newlines
+[out.newline()]
+[out.newline()] Now we restore the original out object:
+[[out = savedOut]]
+[out = savedOut]</pre>
+
+<p>
+	Of course, a Java programmer can write his own filter that does anything
+	he wants, e.g.,
+</p>
+<ul>
+	<li>
+		buffer all output text until a flush occurs,
+		to be able to stop output if an error occurs.
+	</li>
+	<li>
+		an HTML filter that replaces special characters with other special 
+		characters, e.g., &amp; by &amp;amp;, 
+	</li>
+	<li>
+		or a filter that translates from one tag format to another tag format, 
+		e.g., from HTML tags to a proprietary tag format or vice versa, 
+	</li>
+	<li>
+		or a filter that passes the output to another transformation tool, 
+		e.g., XML to an XSLT processor,
+	</li>
+	<li>
+		or a filter that replaces special tags with example text 
+		(from the designer) by dynamically created text/tags 
+		(from the programming expert),
+	</li>
+	<li>
+		or a filter that carries out even more complex actions.
+	</li>
+</ul>
+
+<h2>
+	Passing arguments to a UniT by name and the predefined identifier/reference "identifiers"
+</h2>
+<p>
+	A Hashtable containing named objects can be passed to
+	a UniT. Those named objects can be accessed like local
+	references/variables. This is a way  of passing any
+	argument by name to a UniT. 
+	The Hashtable is an element of itself named "identifiers".
+	This way it can be passed to methods. 
+	It can be passed to other UniTs that need to
+	have access to all current identifiers. 
+</p>
+
+<h2>
+	Include/reuse
+</h2>
+<p>
+	Of course, it is possible to include other text files,
+	e.g., via file i/o and redirection to the out object or
+	to include/execute another UniT, e.g., as a header or footer.
+	This is analogous to Server Side Includes.
+	Even parameters can be passed to another UniT
+	by the identifiers that can be passed to a UniT as described above.
+</p>
+
+<p>
+	You can also parse a UniT file once and execute it multiple times
+	without parsing it again. It could even be executed in parallel threads.
+	Of course, this is a tricky topic. Did you find a bug? Contact me.
+</p>
+
+Of course, you can experiment with UniT and write your own programs to
+get to know the functionality and use-cases of UniT. Enjoy and have fun!
+
+[return]
+this will not be output anymore!

@@ -1,0 +1,89 @@
+[UniT]
+
+[* 
+	This UniT is nested into each UniT, that generates one html page of the final website. 
+	It introduces the main navigation into each page. It expects and uses some parameters.
+*]
+
+	<table border="0" cellpadding="4" cellspacing="4">
+
+
+	<tr>
+	<td nowrap bgcolor="#[=background]">
+		<a href="[=webSite]index.html"><img src="[=guestBook][=unitPicture]" border="0" alt="Generate or convert text, programs, documents, or reports of any format or language"></a>
+	</td>
+	</tr>
+
+	<tr>
+	<td nowrap bgcolor="#[=background]">
+		<a href="[=guestBook]what_is_unit.html"><img src="[=guestBook][=arrowPicture]" border="0" alt="What can you do with the universal text generator?"> What is UniT? </a>
+	</td>
+	</tr>
+
+	<tr>
+	<td nowrap bgcolor="#[=background]">
+		<a href="[=guestBook]advantages_of_unit.html"><img src="[=guestBook][=arrowPicture]" border="0" alt="What are the advantages of using UniT?"> Advantages </a>
+	</td>
+	</tr>
+
+	<tr>
+	<td nowrap bgcolor="#[=background]">
+		<a href="[=guestBook]faq.html"><img src="[=guestBook][=arrowPicture]" border="0" alt="Frequently asked questions"> FAQ </a>
+	</td>
+	</tr>
+
+	<tr>
+	<td nowrap bgcolor="#[=background]">
+		<a href="[=guestBook]installation.html"><img src="[=guestBook][=arrowPicture]" border="0" alt="How to install and start UniT"> Installation </a>
+	</td>
+	</tr>
+
+	<tr>
+	<td nowrap bgcolor="#[=background]">
+		<a href="[=guestBook]how_to_use_unit.html"><img src="[=guestBook][=arrowPicture]" border="0" alt="How to program templates with the universal text generator"> How to use it </a>
+	</td>
+	</tr>
+
+	<tr>
+	<td nowrap bgcolor="#[=background]">
+		<a href="[=guestBook][=API]"><img src="[=guestBook][=arrowPicture]" border="0" alt="How to use the UniT interpreter with Java"> API </a>
+	</td>
+	</tr>
+
+	<tr>
+	<td nowrap bgcolor="#[=background]">
+		<a href="[=guestBook]to_do.html"><img src="[=guestBook][=arrowPicture]" border="0" alt="Things that might come in near future"> To Do </a>
+	</td>
+	</tr>
+
+	<tr>
+	<td nowrap bgcolor="#[=background]">
+		<a href="[=guestBookLink]"><img src="[=guestBook][=arrowPicture]" border="0" alt="I appreciate comments"> Guest book </a>
+	</td>
+	</tr>
+
+	<tr>
+	<td nowrap bgcolor="#[=background]">
+		<a href="[=guestBook]credits_and_links.html"><img src="[=guestBook][=arrowPicture]" border="0" alt="Nice stuff"> Credits &amp; Links</a>
+	</td>
+	</tr>
+
+	<tr>
+	<td nowrap bgcolor="#[=background]">
+		<a href="[=guestBook]license.html"><img src="[=guestBook][=arrowPicture]" border="0" alt="Read license &amp; download here"> License </a>
+	</td>
+	</tr>
+
+	<tr>
+	<td nowrap bgcolor="#[=background]">
+		<a href="[=guestBook]disclaimer.html"><img src="[=guestBook][=arrowPicture]" border="0" alt=""> Disclaimer </a>
+	</td>
+	</tr>
+
+	<tr>
+	<td nowrap bgcolor="#[=background]">
+		<a href="[=guestBook]imprint.html"><img src="[=guestBook][=arrowPicture]" border="0" alt=""> Imprint </a>
+	</td>
+	</tr>
+
+	</table>

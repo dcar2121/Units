@@ -1,0 +1,185 @@
+[UniT]
+
+[* This UniT generates one complete html page of the final website and uses nested UniTs *]
+
+[* first, initialize some parameters for the first nested UniT, the header: *]
+[title="Download, Copyright & License"]
+[englishKeywords="download,copyright,license,commercial,non-commercial,source,version,use,distribute,reverse,warranties,liability,trademarks"]
+[* execute nested UniT: *]
+[unit.UniT.interprete(exampleDir+"header.unit", identifiers, out)]
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top">
+	[* execute nested UniT: *]
+	[unit.UniT.interprete(exampleDir+"navigation.unit", identifiers, out)]
+</td>
+<td>
+	<table border="0" cellpadding="4" cellspacing="4">
+	<tr>
+        <td bgcolor="#[=background]">
+
+		<h1> DOWNLOAD and license </h1>
+
+		<h2> UniT - Universal Text Generator Version 1.0 Product License Information </h2>
+
+		<p> Copyright &copy; 2000 Thorsten van Ellen. All Rights Reserved. </p>
+
+		<p> This SOFTWARE is <strong> NOT </strong> FreeWare. 
+			Please read this license agreement first and then download below. </p>
+
+		<p> [* AHL *] You should <strong> carefully read the following terms and conditions before 
+			installing or using </strong> the SOFTWARE. Unless you have entered 
+			into a separate written license agreement with Thorsten van Ellen 
+			providing otherwise, installation or use of the SOFTWARE 
+			indicates your agreement to be bound by these terms and conditions. [* AHL *] </p>
+
+		<p> [* GFL *] Use of the SOFTWARE provided with this agreement
+			<strong> constitutes your acceptance of these terms. </strong> If you do NOT
+			agree to the terms of this agreement, promptly remove the SOFTWARE together
+			with all copies from your computer. User's use of this 
+			SOFTWARE is conditioned upon compliance by user with
+			the terms of this agreement. [* GFL *] </p>
+
+		<h3> [* AHL *] Versions of the SOFTWARE [* AHL *] </h3> 
+
+		<p> The UniT SOFTWARE is available in <strong> a commercial, a non-commercial, and 
+			a source version. </strong> 
+			They are all subject to the terms and conditions of this Agreement. </p>
+
+		<p>	The commercial and non-commercial version are in object code format.
+			The source version is in Java and other source code format. </p>
+
+		<p>	<strong> The non-commercial version of the SOFTWARE is the only version 
+			that is provided without charge and is only for non-commercial and evaluation use. </strong>
+			This means <strong> you do NOT earn money through the use of the SOFTWARE in any way. </strong>
+			If you earn money through the use of my SOFTWARE, I want to earn money, too!
+			The non-commercial version is not free SOFTWARE and 
+			is subject to the restrictions set forth below. </p>
+
+		<p>	The commercial and source version of the SOFTWARE requires 
+			payment by you of a license fee.  </p>
+
+		<p>	[* AHL *] Upon ordering, downloading, copying, installing or unencrypting
+			any version of the SOFTWARE, you are reaffirming 
+			that you agree to be bound by the terms of this agreement. [* AHL *] </p>
+
+		<h3> License to use </h3>
+		<p> 	Thorsten van Ellen grants to you a limited, non-exclusive, non-transferable 
+			 and non-assignable license to install and use 
+			the Universal Text generator SOFTWARE. </p>
+
+		<h3> License to distribute </h3>
+		<p>	[* GFL *] Please feel free to </p>
+			<ul>
+			<li> offer the non-commercial version of this SOFTWARE on any website, CD, or bulletin board, </li>
+			<li> demonstrate the non-commercial version of the SOFTWARE and its capabilities, or </li> 
+			<li> give copies of the non-commercial version of the SOFTWARE to potential users,
+				so that others may have the opportunity to obtain a copy for use
+				in accordance with the license terms contained here. </li>
+			</ul> [* GFL *] 
+		<p>	You agree you will <strong> only copy the non-commercial version of the 
+			SOFTWARE in whole with this license and all delivered files, 
+			but not in part. </strong>
+			There is no charge for making or distributing copies in this manner. </p>
+
+		<h3> Number of licenses </h3>
+		<p> 	The number of separate licenses must be 
+			the <strong> maximum </strong> of the following: </p>
+			<ul>
+			<li> the number of persons that are using a commercial or 
+				non-commercial license, </li>
+			<li> the number of CPUs that are executing a commercial or 
+				non-commercial license, </li>
+			<li> the number of executable storage locations of a commercial or 
+				non-commercial license. </li>
+			</ul>
+
+		<h3> Termination </h3>
+		<p> 	[* GFL *] This license is effective until terminated. 
+			You may terminate it at any point by destroying the SOFTWARE 
+			together with all copies of the SOFTWARE. [* GFL *] </p>
+
+		<p>	If you have acquired a non-commercial version, [* AHL *] the license granted herein 
+			shall automatically terminate if you fail to comply with any term 
+			or condition of this Agreement. [* AHL *] </p>
+
+		<p>	[* GFL *] Also, Thorsten van Ellen has the option to terminate any license 
+			granted herein if you fail to comply with any term or condition of this 
+			Agreement.  </p>
+
+		<p>	You agree upon such termination to destroy the 
+			SOFTWARE together with all copies of the SOFTWARE. [* GFL *] </p>
+
+		<h3> [* GFL *] Copyright </h3>
+		<p> 	The SOFTWARE is protected by copyright law.
+			You acknowledge that no title to the intellectual property 
+			in the SOFTWARE is transferred to you. You further acknowledge 
+			that title and full ownership rights to the SOFTWARE will 
+			remain the exclusive property of Thorsten van Ellen, 
+			and you will not acquire any rights to the SOFTWARE except 
+			as expressly set forth in this license. You agree that any
+			copies of the SOFTWARE will contain the same proprietary 
+			notices which appear on and in the SOFTWARE. [* GFL *] </p>
+
+		<h3> [* GFL *] Reverse engineering </h3>
+		<p> 	You agree that you will <strong> NOT </strong> attempt to reverse compile, 
+			modify, translate, disassemble the licensed SOFTWARE in whole or in part
+			or create derivative works from the licensed SOFTWARE  
+			in whole or in part. [* GFL *] </p>
+
+		<h3> Rent, lease, loan </h3>
+		<p> [* OML *] You may <strong> NOT rent, lease or loan </strong> the SOFTWARE 
+			without first negotiating a specific license 
+			for that purpose with Thorsten van Ellen. [* OML *] </p>
+
+		<h3> No warranties </h3>
+		<p> 	[* GFL *] Thorsten van Ellen does <strong> NOT </strong> warrant 
+			that the SOFTWARE is error free.
+			Thorsten van Ellen disclaims all warranties with respect 
+			to the SOFTWARE, [* OML *] either express or implied,
+			including but not limited to implied warranties of merchantability,
+			fitness for a particular purpose and noninfringement of third
+			party rights. [* OML *] 
+			[* AHL *] The SOFTWARE is provided <strong> "AS IS." </strong> [* AHL *] </p>
+
+		<h3> No liability for consequential damages </h3>
+		<p> 	[* GFL *] <strong> In no event will Thorsten van Ellen be liable
+			[* HL *] for any loss of profits, business, use, or data or [* HL *]
+			for any consequential, special, incidental or indirect
+			damages of any kind arising out of the delivery or performance
+			or as a result of using or modifying the SOFTWARE,
+			even if Thorsten van Ellen has been advised of 
+			the possibility of such damages. In no event will Thorsten van Ellen's
+			liability for any claim, whether in contract, negligence, tort or any
+			other theory of liability, exceed the license fee paid by
+			you, if any. </strong> <br> [* GFL *] 
+
+			<strong> The licensed SOFTWARE is not designed for use in high-risk
+			activities requiring fail-safe performance.
+			Thorsten van Ellen disclaims any express or implied warranty of fitness
+			for high-risk activities. </strong> </p>
+
+		<h3> Severability </h3>
+		<p> 	In the event of invalidity of any provision of this license, 
+			the parties agree that such invalidity shall not affect the 
+			validity of the remaining portions of this license.</p>
+
+		<h2> Contact </h2>
+
+		<p> Would you like to negotiate an individual license? Do you need a special offer? 
+			Or should you have any questions concerning this license agreement, 
+			contact me via e-mail. </p>
+
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
+
+
+[*downloadLink = false*]
+[* execute nested UniT: *]
+[unit.UniT.interprete(exampleDir+"footer.unit", identifiers, out)]
+[*downloadLink = true*]

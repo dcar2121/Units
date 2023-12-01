@@ -1,0 +1,124 @@
+[UniT]
+
+[* This UniT generates one complete html page of the final website and uses nested UniTs *]
+
+[* first, initialize some parameters for the first nested UniT, the header: *]
+[title="Frequently asked questions"]
+[englishKeywords="text,template,java-like,programming,language,dynamic type checking,mature technology,test"]
+[* execute nested UniT: *]
+[unit.UniT.interprete(exampleDir+"header.unit", identifiers, out)]
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top">
+	[* execute nested UniT: *]
+	[unit.UniT.interprete(exampleDir+"navigation.unit", identifiers, out)]
+</td>
+<td>
+	<table border="0" cellpadding="4" cellspacing="4" [*width="600"*]>
+	<tr>
+	<td bgcolor="#[=background]">
+
+		<h1> So, what is UniT exactly? </h1>
+
+		<p> A unit has two facets: </p>
+		<ol>
+		<li> A unit is a text template. A text template is
+			mainly a text - any text or text format, such as
+			HTML or XML. Such a text template contains
+			special tags that dynamically insert nice
+			content in the right place or start complex actions.</li>
+		<li> Experts know that there is no way to create
+			such a flexible technology, which can do all of these things
+			without a programming language. UniT is also a
+			very small, easy, Java-like programming language
+			that allows loops, conditionals (if-then-else),
+			and full access to Java. But UniT is easier than
+			existing programming languages because
+			complicated, unnecessary things such as type, class-, 
+			field-, and method declarations are simply skipped. </li>
+		</ol>
+		<p> A unit is a mixture of a text and a computer program. 
+			The following image gives you an overview. </p>
+
+		[* 600 x 800 *]
+		<img src="[=englishOverview]" alt="Overview of text generation">
+
+		<h2> What can you do with the programming language part? </h2>
+
+		<p> In principle, most features are very similar to those
+			features that are allowed within Java methods. This
+			means that everything you can do in Java methods, you can do in UniT,
+			too. You can: </p>
+		<ul>
+			<li> do loops, </li>
+			<li> execute different parts depending on any logic/Boolean
+				condition expression (if-then-else), </li>
+			<li> create any Java object, </li>
+			<li> declare references to any Java object (variables/identifiers), </li>
+			<li> access any object and class (fields and methods), </li>
+			<li> calculate any expression, and </li>
+			<li> handle errors. </li>
+		</ul>
+		<p> Of course, you can also access data sources like files and
+			databases, or even execute a graphical user interface. A
+			UniT program could call any Java program and vice versa. </p>
+
+		<h2> And how is it different to Java? </h2>
+
+		<p> UniT is exclusively designed to easily generate text in
+			any format. UniT and Java have distinct
+			purposes and it was not the intention to allow complex
+			program logic within UniT by declaring types and members.
+			It is not needed within UniT. If you need to execute
+			complex logic within UniT, then you can call a Java program (written
+			by a Java programming expert). If you need to generate
+			text within Java, then you can call a UniT program. </p>
+		<p> Other differences are that </p>
+		<ul>
+		<li> UniT realizes dynamic type	checking, and therefore no type casting is needed, </li>
+		<li> there is no switch-statement, </li>
+		<li> there are no import directives,
+			therefore if you need to name a class, you must qualify
+			it totally, exactly as in Java, and </li>
+		<li> UniT only knows the
+			primitive types boolean and int. There is no byte, short, long,
+			char, float and double. But nevertheless, all constructors and methods
+			can be executed, even those that expect parameters of a primitive type.
+			Simply use instances of the classes Byte, Short, Long, Character, 
+			Float and Double to pass parameters of the corresponding primitive type. </li>
+		</ul>
+
+		<h2> Is UniT a mature technology? </h2>
+
+		<p> The implementation of UniT has been tested extensively. 
+			The repeatable regression test should execute nearly every statement. 
+			Did you find a bug? Contact me (see below). </p>
+
+		<h2> Do you have examples? </h2>
+			
+		<p> Yes! This website is generated with UniT!
+			You'll find it within the download file that contains 
+			an example directory. Just read the readme.txt and 
+			open the files ending with .unit with a text editor. </p>
+
+		<h2> Do you have more examples, e.g. RTF? </h2>
+
+		<p> Not, yet. Do you have any? I would like to collect and 
+			publish some more. </p>
+
+		<h2> I would like to do html-forms with UniT? </h2>
+
+		<p> Well, you can generate html-forms with UniT, even embedded within servlets,
+			but you/a programming expert should do the business logic 
+			with java, not with UniT-templates! 
+			UniT is no "visual tool", yet ;-) </p>
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
+
+[* execute nested UniT: *]
+[unit.UniT.interprete(exampleDir+"footer.unit", identifiers, out)]

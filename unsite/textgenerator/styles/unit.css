@@ -1,0 +1,37 @@
+// Want to get the same font for all HTML-tags!
+// Do not want to set the font for them all explicitly,
+// but it seems as Netscape needs it for all elements!
+// For Internet Explorer need to set the font only for body-tag.
+
+BODY,P,UL,OL,TD		{	font-family: Arial, Helvetica, Lucida, sans-serif; }
+
+B			{	font-family: Arial, Helvetica, Lucida, sans-serif; 
+				font-weight: bold; }
+
+I			{	font-family: Arial, Helvetica, Lucida, sans-serif; 
+				font-style: italic; }
+
+strong			{	font-family: Arial, Helvetica, Lucida, sans-serif; 
+				font-weight: italic; }
+
+H1                      {	font-family: Arial, Helvetica, Lucida, sans-serif; 
+				font-size: 125%;
+				font-weight:  bold; }
+
+H2                      {	font-family: Arial, Helvetica, Lucida, sans-serif; 
+			 	font-size: 100%;
+				font-weight:  bold; }
+
+H3			{	font-family: Arial, Helvetica, Lucida, sans-serif; 
+			 	font-size: 100%;
+				font-weight:  italic; }
+
+H4			{	font-family: Arial, Helvetica, Lucida, sans-serif; 
+			 	font-size: 100%;}
+
+TH			{	font-family: Arial, Helvetica, Lucida, sans-serif;
+				font-weight: bold; }
+
+// pre does not break long lines, therefore make such lines smaller:
+PRE                     {	font-family: Courier; 
+			 	font-size: 75%; }

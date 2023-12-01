@@ -1,0 +1,48 @@
+[UniT]
+
+[* This UniT generates one complete html page of the final website and uses nested UniTs *]
+
+[* first, initialize some parameters for the first nested UniT, the header: *]
+[title="Guest book - I appreciate comments "]
+[englishKeywords="guest,book,feedback,questions,error,bug,concurrent,product,integration,publish"]
+[* execute nested UniT: *]
+[guestBook = "http://www.textgenerator.com/"]
+[unit.UniT.interprete(exampleDir+"header.unit", identifiers, out)]
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top">
+	[* execute nested UniT: *]
+	[unit.UniT.interprete(exampleDir+"navigation.unit", identifiers, out)]
+	[guestBook = ""]
+</td>
+<td>
+	<table border="0" cellpadding="4" cellspacing="4">
+	<tr>
+	<td bgcolor="#[=background]">
+
+		<h1> Contact me or sign the guest book! </h1>
+
+		<ul>
+			<li> Do you have any questions? </li>
+			<li> Did you find an error in these pages or a bug in the software? </li>
+			<li> What do you think about the advantages and disadvantages? </li>
+			<li> Would you like to integrate UniT into your commercial product? </li>
+		</ul>
+
+		<p> Please, send me an e-mail to 
+		<a href="mailto:[=eMail]">mailto:[=eMail]</a> or sign the guest book below:
+		</p>
+
+		[* include the file with the html fragment for the guest book: *]
+		[unit.FileRedirection.redirectFileToWriter(guestBookFragment, out)]
+
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
+
+[* execute nested UniT: *]
+[unit.UniT.interprete(exampleDir+"footer.unit", identifiers, out)]

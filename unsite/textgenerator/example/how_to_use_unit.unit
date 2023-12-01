@@ -1,0 +1,31 @@
+[UniT]
+
+[* This UniT generates one complete html page of the final website and uses nested UniTs *]
+
+[* first, initialize some parameters for the first nested UniT, the header: *]
+[title="How to develop / program templates "]
+[englishKeywords="tags,bracket,escape,output,nestable,comments,variable,declaration,string,calculation,boolean,comparison,field,method,constructor,read,write,access,while,do,for,loop,error,handling,predefined identifier,out,filter,redirect,arguments,include"]
+[* execute nested UniT: *]
+[unit.UniT.interprete(exampleDir+"header.unit", identifiers, out)]
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top">
+	[* execute nested UniT: *]
+	[unit.UniT.interprete(exampleDir+"navigation.unit", identifiers, out)]
+</td>
+<td>
+	<table border="0" cellpadding="4" cellspacing="4">
+	<tr>
+	<td bgcolor="#[=background]">
+		[* execute nested UniT: *]
+		[unit.UniT.interprete(exampleDir+"how_to_use_unit2.unit", identifiers, out)]
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
+
+[* execute nested UniT: *]
+[unit.UniT.interprete(exampleDir+"footer.unit", identifiers, out)]

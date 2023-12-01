@@ -1,0 +1,137 @@
+[UniT]
+
+[* This UniT generates one complete html page of the final website and uses nested UniTs *]
+
+[* first, initialize some parameters for the first nested UniT, the header: *]
+[title="More general, flexible, easier, smaller and cleaner than other technologies "]
+[englishKeywords="user,friendly,error,messages,common,syntax,semantic,plattform independant,extensible,presentation,application,logic,orthogonal tags,servlets,exception handling,multiple data sources,conversions,documentation generator,integration"]
+[* execute nested UniT: *]
+[unit.UniT.interprete(exampleDir+"header.unit", identifiers, out)]
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top">
+	[* execute nested UniT: *]
+	[unit.UniT.interprete(exampleDir+"navigation.unit", identifiers, out)]
+</td>
+<td>
+	<table border="0" cellpadding="4" cellspacing="4">
+	<tr>
+        <td bgcolor="#[=background]">
+
+		<h1> What are the advantages compared with other technologies? </h1>
+
+		<ul>
+		<li> The main advantage of UniT compared with any other generators is, 
+			that UniT is much more generalized. It is designed to generate any kind of text.
+			It is a Universal Text generator. </li>
+		<li> UniT can be executed independently from HTTP client requests, and 
+			its output can be directed to any target, i.e., it can be used 
+			to easily generate any text format without
+			requesting a server such as a JSP-engine. </li>	
+		<li> UniT can do everything that other programming languages can do, 
+			but there are fewer language constructs, 
+			which makes UniT much easier to read and to learn. </li>
+		<li> UniT has a common syntax and semantics just like C, C++,
+			Java, and other programming languages.
+			This also makes UniT easier to learn. </li>
+		<li> Any number and any kind of Java objects can be provided
+			by the programming experts. </li>
+		<li> Through the intelligent application of auxiliary technology and
+			a certain evolution, and in light of the extensive functionality, 
+			the UniT source code is very small. Comparable implementations
+			are many times bigger. Therefore it might be possible to execute UniT 
+			even on a handheld computer, that has java virtual machine. 
+			The source code is well structured and 50% of it is documentation (comments). 
+			The implementation of UniT has been tested extensively. 
+			The repeatable regression test should execute nearly every statement. </li>
+		</ul>
+
+		<p> But UniT has many more advantages in comparison with other technologies: </p>
+
+		<h2> Unlike non-Java technologies, </h2>
+	        <ul>
+		<li> UniT is realized with Java and therefore probably 
+			works on the most platforms. </li>
+		<li> UniT allows full access to Java and therefore probably 
+			offers the most complete support and extensibility. </li>
+	        </ul>
+
+       		<h2> Unlike JSP, ASP, PHP, and other server technologies, </h2>
+	        <ul>
+		<li> UniT cleanly separates presentation and application logic and 
+			supports the model-view-controller concept. </li>
+		<li> A special case of the previous argument is that it 
+			even separates parser and generator logic 
+			of converters or documentation generators. </li>
+		<li> UniT only needs a few selected but complete language constructs, and 
+			therefore UniT is a very small technology (about 90 KB JAR) </li>
+		<li> UniT tags are orthogonal to the most frequently used markup tags. 
+			Therefore editors won't be confused. </li>
+		<li> UniT has very user-friendly error messages that contain the source location, 
+			error description, and context information. </li>
+		<li> There are no problematic tag libraries. </li>
+		</ul>
+
+		<h2> Unlike JSP, ASP, and other technologies, UniT does <strong> not </strong> need </h2>
+	        <ul>
+		<li> a special operating system such as Windows. </li>
+		<li> any particular web server, e.g., IIS or Apache, or any web server at all. </li>
+		<li> a second compiler such as a Java or Visual Basic compiler, 
+			because UniT is a one-step technology. </li>
+		</ul>
+		<p> UniT can replace those expensive prerequisites to build on and 
+			offer a complete and truly low-budget product, 
+			that is a low-budget content management system or shop system. 
+			The customer does not have to buy additional expensive software. 
+			Nevertheless, UniT can be embedded into servlets and 
+			therefore can be combined with web servers. </p>
+
+	        <h2> Unlike WebMacro, </h2>
+	        <ul>
+		<li> UniT has a common, known syntax and </li>
+		<li> common programming concepts. </li>
+		<li> UniT allows the usual expressions for assignments, conditions,
+			and parameters, which makes multiplication and array
+			access possible. </li>
+		<li> Any method and constructor can be executed. </li>
+		<li> UniT can do exception handling. </li>
+	        </ul>
+
+		<h2> Unlike XSLT, </h2>
+	        <ul>
+		<li> multiple and varied data sources can be used with UniT
+			at the same time, for example, multiple databases, content
+			management systems, files, net and web resources, and programs. </li>
+		<li> with UniT, free programmable, and therefore unlimited, conversions are possible. </li>
+		</ul>
+
+		<h2> Unlike most documentation generators, </h2>
+		<ul>
+		<li> parsers of any programming language can be combined with UniT, and 
+			hence programs in any programming language can be documented with UniT. </li>
+		<li> any text format and layout can be generated with UniT. 
+			This is much easier than using doclets from javadoc! 
+			However, javadoc/doclets may be used as Java parser combined with UniT. </li>
+		<li> any functionality can be extended to UniT. </li>
+		</ul>
+
+		<h2> Therefore, </h2>
+		<ul>
+		<li> UniT is very easy to learn. </li>
+		<li> due to its independence from platforms, systems, and text formats,
+			its application is very flexible. </li>
+		<li> it can be integrated into other products seamlessly. </li>
+		</ul>
+
+		<p> What do you think about UniT? I would like to hear from you. </p>
+
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
+
+[* execute nested UniT: *]
+[unit.UniT.interprete(exampleDir+"footer.unit", identifiers, out)]

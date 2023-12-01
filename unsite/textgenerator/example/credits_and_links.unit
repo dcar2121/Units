@@ -1,0 +1,98 @@
+[UniT]
+
+[* This UniT generates one complete html page of the final website and uses nested UniTs *]
+
+[* first, initialize some parameters for the first nested UniT, the header: *]
+[title="Credits and Links"]
+[englishKeywords="PERCEPS,ANTLR,disclaimer,documentation,web page,parser,generator,xml"]
+[* execute nested UniT: *]
+[unit.UniT.interprete(exampleDir+"header.unit", identifiers, out)]
+
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td valign="top">
+	[* execute nested UniT: *]
+	[unit.UniT.interprete(exampleDir+"navigation.unit", identifiers, out)]
+</td>
+<td>
+	<table border="0" cellpadding="4" cellspacing="4">
+	<tr>
+        <td bgcolor="#[=background]">
+
+		<h1> Credits </h1>
+
+		<p> First of all, I would like to thank Mark Peskin for his inspiring tool 
+			<a target="_blank" href="http://starship.python.net/~tbryan/PERCEPS/index.html">PERCEPS</a>. 
+			PERCEPS is a documentation generator for C++ programs similar 
+			to Javadoc. It is written in Perl and
+			is able to parse C++ as far as needed to generate documentation.
+			It is by far better than Javadoc because it is possible to
+			extend the tags that are used in the documentation comments within C++, and
+			it allows the generation of any text output format that is needed.
+			In addition to this, it is possible to filter input and output and 
+			to extend the functionality of the generator at specific issues. </p>
+
+		<p> Next, I would like to thank Terence Parr and his guys at 
+			<a target="_blank" href="http://www.antlr.org">http://www.antlr.org</a> 
+			for ANTLR. ANTLR (Another Tool for Language 
+			Recognition) is just another tool for language recognition ;-). 
+			This means it is a very comfortable parser generator similar to 
+			lex &amp; yacc or flex &amp; bison. </p>
+
+		<p> And finally I would like to thank the guys at 
+			<a target="_blank" href="http://www.disclaimer.de/index.html">
+				http://www.disclaimer.de/index.html</a>
+			for publishing a disclaimer for reuse. </p>
+
+		<h1> Links </h1>
+
+		<h2> Documentation generators </h2>
+
+		<ul>
+			<li><a target="_blank" href="http://starship.python.net/~tbryan/PERCEPS/index.html">PERCEPS</a></li>
+			<li><a target="_blank" href="http://java.sun.com/products//jdk/1.2/docs/tooldocs/javadoc">JavaDoc</a></li>
+		</ul>
+
+		<h2> Program code generators </h2>
+		<ul> 
+			<li><a target="_blank" href="http://www.autogen.freeservers.com">AutoGen</a></li>
+			<li><a target="_blank" href="http://imatix.com/html/gslgen">GSLgen</a></li>
+			<li><a target="_blank" href="http://www.luxline.com/talongen">TalonGen</a></li>
+		</ul>
+
+		<h2> Web page generators </h2>
+
+		<ul>
+			<li><a target="_blank" href="http://java.sun.com/products/jsp">JSP</a></li>
+			<li><a target="_blank" href="http://www.php.net">PHP</a></li>
+			<li><a target="_blank" href="http://www.webmacro.org">WebMacro</a></li>
+		</ul>
+
+		<h2> Parser generators </h2>
+
+		<ul>
+			<li><a target="_blank" href="http://www.antlr.org">ANTLR</a></li>
+			<li><a target="_blank" href="http://www.metamata.com/javacc">JavaCC</a></li>
+			[* <li><a target="_blank" href="">commented Catalogue</a></li> *]
+		</ul>
+
+		<h2> XML technology </h2>
+		<ul>
+			<li><a target="_blank" href="http://www.oasis-open.org">XML, XSL(T), ...</a></li>
+			<li><a target="_blank" href="http://www.devcentre.org">Secure File or Document Transfer</a></li>
+		</ul>
+
+		<h2> Some articles </h2>
+		<ul>
+			<li><a target="_blank" href="http://www.nothingbutnet.co.nz/research/webarchitecture.htm">Web Server Architecture</a></li>
+		</ul>
+
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
+
+[* execute nested UniT: *]
+[unit.UniT.interprete(exampleDir+"footer.unit", identifiers, out)]

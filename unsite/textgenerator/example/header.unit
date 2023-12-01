@@ -1,0 +1,48 @@
+[UniT]
+
+[* 
+	This UniT is nested into each UniT, that generates one html page of the final website. 
+	It introduces some meta tags into each html page. It expects and uses some parameters.
+*]
+
+<html>
+
+<head>
+	<!-- The universal text generator can generate or convert any text format, web-page, report, 
+	computer program, or documentation such as static or dynamic html, xml, sgml, postscript, 
+	LaTex, C, C++, Java, ASP, or JSP. -->
+
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+	<META NAME="author" CONTENT="Thorsten van Ellen">
+	<META NAME="publisher" CONTENT="Thorsten van Ellen">
+	<META NAME="copyright" CONTENT="Copyright 2000 Thorsten van Ellen. All rights reserved.">
+	<META NAME="keywords" CONTENT="generate,convert,text,programs,document,reports,format,develop,template,script,language,UniT,universal,generator,static,dynamic,web pages,documentation,html,xml,pdf,rtf,ps,latex,c++,java,sql,jsp,asp,proprietary,[=englishKeywords]">
+	<META NAME="description" CONTENT="Generate or convert text, programs, documents, or reports of any format or language with UniT - the universal text generator, e.g. static or dynamic HTML, XML, LaTex, C++, Java, JSP, or proprietary formats">
+	<META NAME="page-topic" CONTENT="Generate or convert text, programs, documents, or reports of any format or language with UniT - the universal text generator, e.g. static or dynamic HTML, XML, LaTex, C++, Java, JSP, or proprietary formats">
+	<META NAME="audience" CONTENT="all">
+	<META NAME="expires" CONTENT="NEVER">
+	<META NAME="robots" CONTENT="INDEX,FOLLOW">
+
+	<meta name="title" content="Generate or convert text, programs, documents, or reports of any format or language with UniT - the Universal Text generator">
+
+	<meta name="DC.Title" content="Generate or convert text, programs, documents, or reports of any format or language with UniT - the Universal Text generator">
+	<meta name="DC.Creator" content="Thorsten van Ellen">
+	<meta name="DC.Subject" content="[=title] (UniT - the Universal Text generator)">
+	<meta name="DC.Description" 
+		content="Generate or convert text, programs, documents, or reports of any format or language with UniT - the universal text generator, e.g. static or dynamic HTML, XML, LaTex, C++, Java, JSP, or proprietary formats.">
+	<meta name="DC.Publisher" content="Thorsten van Ellen">
+	<meta name="DC.Identifier" content="http://www.textgenerator.com">
+	<meta name="DC.Language" content="en">
+	<meta name="DC.Rights" content="Copyright (C) 2000 Thorsten van Ellen. All Rights Reserved. ">
+
+	<title>[=title] (UniT - the Universal Text generator)</title>
+
+	<link rel=stylesheet type="text/css" href="[=guestBook][=styleSheet]">
+</head>
+
+<body bgcolor="#FFFFFF">
+
+	<!-- The universal text generator can generate or convert any text format, web-page, report, 
+	computer program, or documentation such as static or dynamic html, xml, sgml, postscript, 
+	LaTex, C, C++, Java, ASP, or JSP. -->

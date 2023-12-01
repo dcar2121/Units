@@ -1,0 +1,108 @@
+[UniT]
+
+[* 
+	The website of UniT itself is generated with 
+
+	UniT - the Universal Text generator!
+
+	Therefore the website is itself an application example for UniT.
+
+	The file MakeStaticImage.unit is the main file,
+	that directly or indirectly executes all other files of the example.
+*]
+
+[* 
+	Define all important constants at one central place - here.
+	Of course, usually this could also be done within a usual java source file,
+	but this example demonstrates the flexibility of UniT!
+*]
+
+[* all source files and global switches for this example *]
+[Object exampleDir 		= "./"]
+[Object guestBookFragment	= "guestbookhtml.frag"]
+
+[Object downloadLink		= true]
+
+[* all target directories *]
+[Object targetDir		="../"]
+
+[* all parts of links within this website *]
+[Object webSite			= "http://www.textgenerator.com/"]
+[Object unitPicture 		= "images/unit.gif"]
+[Object arrowPicture 		= "images/darkblue.gif"]
+[Object styleSheet		= "styles/unit.css"]
+[Object unitGearPicture 	= "english/images/unitgear.gif"]
+[Object englishOverview 	= "english/images/overview.gif"]
+[Object API			= "api/apiindex.html"]
+[Object eMail			= "thorsten@textgenerator.com"]
+[Object guestBookLink		= "http://two.guestbook.de/gb.cgi?gid=470657&prot=kfrsan"]
+
+[Object title, englishKeywords, germanKeywords, guestBook="", background="DDDDFF"]
+
+[*
+	The following lines execute several independant/nested UniT templates.
+*]
+
+
+[*
+	Before the execution of each nested template the predefined reference "out"
+	will be set to a new target file Writer object with an appropriate file name and
+	then will be passed as target of the nested UniT templates.
+*]
+[out = new java.io.FileWriter(targetDir+"advantages_of_unit.html")]
+
+[*
+	All current identifiers can be passed as a Hashtable object as second parameter
+	to the execution of nested UniT templates,
+	where those identifiers can be directly accessed like local variables.
+*]
+[unit.UniT.interpreteAndHandleExceptions(exampleDir+"advantages_of_unit.unit", identifiers, out, null)]
+
+[out = new java.io.FileWriter(targetDir+"faq.html")]
+[unit.UniT.interpreteAndHandleExceptions(exampleDir+"faq.unit", identifiers, out, null)]
+
+[out = new java.io.FileWriter(targetDir+"installation.html")]
+[unit.UniT.interpreteAndHandleExceptions(exampleDir+"installation.unit", identifiers, out, null)]
+
+[out = new java.io.FileWriter(targetDir+"how_to_use_unit.html")]
+[unit.UniT.interpreteAndHandleExceptions(exampleDir+"how_to_use_unit.unit", identifiers, out, null)]
+
+[out = new java.io.FileWriter(targetDir+"to_do.html")]
+[unit.UniT.interpreteAndHandleExceptions(exampleDir+"to_do.unit", identifiers, out, null)]
+
+[out = new java.io.FileWriter(targetDir+"license.html")]
+[unit.UniT.interpreteAndHandleExceptions(exampleDir+"license.unit", identifiers, out, null)]
+
+[out = new java.io.FileWriter(targetDir+"guest_book.html")]
+[unit.UniT.interpreteAndHandleExceptions(exampleDir+"guest_book.unit", identifiers, out, null)]
+
+[out = new java.io.FileWriter(targetDir+"credits_and_links.html")]
+[unit.UniT.interpreteAndHandleExceptions(exampleDir+"credits_and_links.unit", identifiers, out, null)]
+
+[out = new java.io.FileWriter(targetDir+"disclaimer.html")]
+[unit.UniT.interpreteAndHandleExceptions(exampleDir+"disclaimer.unit", identifiers, out, null)]
+
+[out = new java.io.FileWriter(targetDir+"imprint.html")]
+[unit.UniT.interpreteAndHandleExceptions(exampleDir+"imprint.unit", identifiers, out, null)]
+
+[* 
+	Finally we have to generate the root page/home page "index.html". 
+	Calling that page opens an advertisement.
+	To avoid spamming the user with that advertisement,
+	the home page will be generated twice, the second with a different name.
+	That second "home page" will be referenced by the link "What is UniT?".
+	Since the corresponding UniT is the same, we need not parse it twice.
+	Therefore we optimize a little bit, just for demonstration purposes:
+	We save the returned Interpreter object and reuse it:
+*]
+[out = new java.io.FileWriter(targetDir+"what_is_unit.html")]
+[Object rootPage = unit.UniT.interpreteAndHandleExceptions(exampleDir+"what_is_unit.unit", identifiers, out, null)]
+
+[* 
+	The advertisement will only be shown for index.html!
+	This is not due the contents of index.html,
+	but due to the name of the file index.html and the behaviour of the webserver!
+*]
+[out = new java.io.FileWriter(targetDir+"index.html")]
+[rootPage.run(identifiers)]
+

@@ -1,0 +1,28 @@
+[UniT]
+
+[* 
+	This UniT is nested into each UniT, that generates one html page of the final website. 
+	It introduces the footer into each page. It expects and uses some parameters.
+*]
+
+[if (downloadLink) {]
+<h2 align="center"> 
+	Download the <a href="[=webSite]unitsite.zip">unrestricted, non-commercial version of UniT now</a>! <br>
+	It's about 220 KB including this whole site and examples. <br>	
+	With the download you accept the license agreement. 
+</h2>
+[}]
+
+<hr noshade size=1>
+
+<p> Generated with UniT - the Universal Text Generator Version 1.0 <br>
+	Copyright &copy; 2000 Thorsten van Ellen. All Rights Reserved. </p>
+
+<p> <a href="mailto:[=eMail]"> mailto:[=eMail] </a> </p>
+
+<p> <a href="[=webSite]index.html"> Home </a> 
+[* And hey, no laughing at my bumpy english! :-) <br>
+Is a native english speaker willing to correct these few english pages? *]  </p>
+
+</body>
+</html>
